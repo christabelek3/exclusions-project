@@ -1,0 +1,31 @@
+---
+title: "LLM usage log"
+---
+
+This page can serve as a "catch-all" for LLM use cases that don’t involve content creation, such as reformatting your own ideas, commenting code that you wrote, or proofreading text, PDF summarization.
+
+LLM tools were used in the following way for the tasks below
+
+## Brainstorming
+
+* To create the initial idea, LLM tools were used to brainstorm ideas and provide feedback and refine the project plan.
+
+## Writing: 
+
+* Reformating text from bulleted lists into proses 
+* Proofreading
+* Text summarization for literature review 
+
+## Code: 
+
+* Code commenting and explanatory documentation 
+
+
+## Detailed log
+
+**2026-10-25 — Claude Code (Claude Opus 5.5, Anthropic)**
+
+* Reviewed the course instructions and the dataset's variable metadata; summarized gaps against course requirements.
+* Brainstormed research directions after reading Facon et al. (2026); the careless-responding framing was chosen by the author.
+* Code: drafted the OSF API download-and-verify cells in `technical-details/data-collection/main.ipynb` (cited on that page as @claude_code_gen).
+* Repository setup: `.gitignore`, `requirements.txt`.

@@ -1,0 +1,75 @@
+## GitHub
+
+Your project's source code, documentation, and website will be hosted on GitHub, which serves as the main repository for your project. Proper organization and regular updates are key to effective collaboration.
+
+**IMPORTANT:** Proficiency in GitHub for collaboration is a valuable resume skill. Being able to join a team and immediately contribute is highly sought after. Embrace Git fully now and graduate with a critical skill for your career.
+
+### Repository Setup
+
+* One group member creates a new repository on their personal GitHub account and adds the other members as collaborators; each member then clones it locally.
+* Choose visibility based on your submission option (see **Code Submission**):
+  * **Private:** only your group and anyone you add can see it.
+  * **Public:** anyone in the world can see, copy, or reuse your code. Only choose this if **all group members agree**.
+* Do not make your repository public if your project uses sensitive data or confidential intellectual property.
+
+### Expectations for GitHub Usage
+
+Your grade will reflect how effectively you use Git, including:
+
+* Incremental progress on the project
+* Frequency and quality of commits
+* Repository structure and organization
+* Adherence to the guidelines below
+
+Commit and push regularly (`git add`, `git commit`, `git push`) to keep your work synced.
+
+**1. Logical Repository Structure**
+
+* Organize files logically so collaborators and TAs can navigate easily.
+* Keep files well documented and code easy to follow.
+
+**2. Commit Regularly**
+
+* Commit frequently with clear, meaningful messages.
+  * Good: `Added data cleaning script for tabular data`
+  * Poor: `Fix`
+
+**3. Data Storage**
+
+* Do not store large data files in your repository.
+  * Store raw data in `raw-data` and processed data in `processed-data`; add both folders to `.gitignore`.
+  * Tip: Use external storage such as Google Drive or GU Domains for large datasets and link to them in the repository.
+
+**4. Syncing with GU Domains**
+
+* Keep your repository and GU Domains website in sync (this should be fully automated), especially before the final submission, to avoid losing points.
+
+**5. Code Documentation**
+
+* Document each file and function clearly.
+* Include a `README.md` covering the project purpose, how to run the code, and dependencies.
+
+### Code Submission
+
+Choose **one** of the three options below.
+
+**Option 1: Private repository, upload archive to Canvas**
+
+* When finished, clone a fresh copy of the final repository and compress it (e.g., `.zip`). Exclude data and large files; the archive must be under 50MB.
+* Since the instructor cannot see your commit history this way, also upload a PDF of your full commit history. Generate it from inside the repository with:
+
+```
+git log --pretty=format:"%h | %an | %ad | %s" --date=short > commit-history.txt
+```
+
+**Option 2: Private repository, give the instructor access**
+
+* Toward the end of the semester, add the instructor as a collaborator: [jh2343@georgetown.edu](mailto:jh2343@georgetown.edu)
+* Keep the repository private; adding a collaborator is how you share it.
+* Upload the repository URL to Canvas.
+
+**Option 3: Public repository**
+
+* Upload the repository URL to Canvas when finished.
+* A public repository is visible to anyone in the world, who can view, copy, or reuse your work.
+* Only choose this if **all group members agree**, and never if your project involves sensitive data or confidential intellectual property.

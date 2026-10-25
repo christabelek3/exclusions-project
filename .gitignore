@@ -1,0 +1,18 @@
+# Data: sensitive, never commit (re-download via technical-details/data-collection/main.ipynb)
+data/
+
+# Quarto build output
+_site/
+.quarto/
+/.quarto/
+*_files/
+
+# Python / Jupyter
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+
+# OS
+.DS_Store
+
+**/*.quarto_ipynb
