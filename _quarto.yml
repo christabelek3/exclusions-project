@@ -40,7 +40,7 @@ format:
   html:
     theme: cosmo
     bibliography:   ./assets/references.bib
-    csl:  ./assets/nature.csl
+    csl:  ./assets/apa.csl
     toc: true
 
 
