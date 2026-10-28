@@ -2,36 +2,56 @@
 title: "Progress log"
 ---
 
-Use this page to track your progress and keep a log of your contributions to the project, please update this each time you work on your project, it is generally a good habit to adopt.
-
-If you are working as a team, at the end, you can duplicate the project and add it to your individual portfolio websites. If you do, you **MUST** retain attribution to your teammates. Removing attribution would constitute plagiarism.
-
 ## To-do
 
-* [ ] Explore possible topics by brainstorming with GPT 
-* [ ] write a technical methods sections for K-means
-* [ ] write a technical methods sections for PCA
+**Data cleaning**
 
-... etc 
+* [ ] Finish harmonizing column names across the primary and benchmark files (English names, `age_group` with labels)
+* [ ] Subtract 1 from PID-5-BF+M items in the primary file only (benchmark items are already 0-3)
+* [ ] Convert code columns to `Int64`; check all item values are in range
+* [ ] Recompute CRS correctness from the answer key and check against `CRS_Totaal` / `CRS_Totaal_Dummy`; create `crs_fail`
+* [ ] Describe missingness (by CRS failure and age group) and choose a scoring rule for incomplete scales
+* [ ] Decide how to handle non-binary respondents (n = 3) in threshold analyses
+* [ ] Save cleaned primary and benchmark files to `data/processed-data/`
+* [ ] Rename `data-cleaning/main.ipynb` back if renamed; clear any participant-level outputs before rendering
 
-## Christabel Ekeocha:
+**Package (`src/exclusions/`)**
 
-Provide their name, a link to their "About Me" page.
+* [ ] `scoring.py`: LPFS sums, PID-5-BF+M domain and facet means, T-score categories (Facon et al., 2026, Table 1)
+* [ ] Test `scoring.py` against the benchmark file's precomputed scale scores
+* [ ] `plotting.py`: poster figure style
+* [ ] Point `QUARTO_PYTHON` at `.venv/bin/python` so the site can import the package
 
-Also, describe a log of their project roles.
+**Other**
+
+* [ ] Find the questionnaire item order (needed for sub-question 2, CRS item position)
+* [ ] Remove `instructions/`, `audio/`, `xtra/` and template text before submission
+
+## Christabel Ekeocha
+
+<!-- TODO (Christabel): link to your "About Me" page and describe your project roles -->
 
 **Weekly project contribution log:**
 
+**T: 10-27-2026**
 
-**S: 10-25-2026** 
+* [x] Completed `pyproject.toml` and installed the `exclusions` package in editable mode in the project `.venv`
+* [x] Wrote `io.py`: `load_rawdata()` (reads `.sav` files as numeric codes), `load_processeddata()`, `save_to_csv()`, with paths built from the package location
+* [x] Started the data-cleaning notebook: loaded both datasets, renamed `geslacht` / `Geslacht` to `gender_code`, and added English gender labels
+* [x] Compared column names across the two files and began harmonizing them
+* [x] Found that the benchmark file codes PID-5-BF+M items 0-3 (primary: 1-4), that its `LT_Cat` labels (`JV` / `OV`) confirm 0 = younger and 1 = older, and that it includes the authors' scale scores for validating `scoring.py`
+
+**M: 10-26-2026**
+
+* [x] Decided on a small package for shared code (`io.py`, `scoring.py`, `plotting.py`) with the analysis kept in the notebooks
+* [x] Created the package skeleton in `src/exclusions/`
+
+**S: 10-25-2026**
 
 * [x] Reviewed the course instructions and the dataset's variable metadata; summarized gaps against course requirements.
 * [x] Brainstormed research directions after reading Facon et al. (2026); the careless-responding framing was chosen by the author.
 * [x] Repository setup: `.gitignore`, `requirements.txt`.
-* [x] Drafted the OSF API download-and-verify cells in `technical-details/data-collection/main.ipynb` 
-* [x] Collected the dataset from OSF and verified its integrity using SHA256 hash. Saved the dataset to `data/raw/`.
-
-
-**M: 10-14-2024** 
-
-* [x] Do a first draft of the project landing page 
+* [x] Added the OSF API download-and-verify cells to `technical-details/data-collection/main.ipynb` (drafted with Claude Code).
+* [x] Collected the datasets from OSF and verified their integrity with SHA-256 hashes; saved them to `data/raw-data/`.
+* [x] Set up Python 3.15 with the project requirements and a project `.venv`; configured the Jupyter kernel and Quarto.
+* [x] Added Facon et al. (2025, 2026) to `references.bib`, switched the site to APA 7th edition citations, and linked the in-text citations on the data-collection page.

@@ -25,6 +25,6 @@ LLM tools were used in the following way for the tasks below
 
 **2026-10-25 — Claude Code (Claude Opus 5.5, Anthropic)**
 
-* Reviewed the course instructions and the dataset's variable metadata; summarized gaps against course requirements.
 * Brainstormed research directions after reading Facon et al. (2026); the careless-responding framing was chosen by the author.
+* Code: drafted the OSF API download-and-verify cells in `technical-details/data-collection/main.ipynb`; reviewed and edited by the author (cited on that page as @claude_code_gen).
 * Repository setup: `.gitignore`, `requirements.txt`.
